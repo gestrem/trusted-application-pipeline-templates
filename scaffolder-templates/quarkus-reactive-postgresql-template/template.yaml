@@ -103,9 +103,8 @@ spec:
               title: Repo Host
               type: string
               description: Your SCM host
-              default: gitlab-gitlab.apps.cluster-4tqns.sandbox1361.opentlc.com
-              enum:
-                - gitlab-gitlab.apps.cluster-4tqns.sandbox1361.opentlc.com
+              default: gitlab-gitlab.apps.cluster-86gmv.sandbox2130.opentlc.com
+              
             owner:
               title: Repo Owner
               type: string
