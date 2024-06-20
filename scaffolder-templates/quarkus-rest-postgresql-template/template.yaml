@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: quarkus-rest-postgresql-template-1
-  title: quarkus-rest-postgresql-template-1
-  description: Create a quarkus-rest-postgresql-template microservice 1
+  name: quarkus-rest-postgresql-template-2
+  title: quarkus-rest-postgresql-template-2
+  description: NEW Create a quarkus-rest-postgresql-template microservice 2
   tags:
     - recommended
     - java
