@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: quarkus-rest-postgresql-template
-  title: quarkus-rest-postgresql-template
-  description: Create a quarkus-rest-postgresql-template microservice
+  name: quarkus-rest-postgresql-template-1
+  title: quarkus-rest-postgresql-template-1
+  description: Create a quarkus-rest-postgresql-template microservice 1
   tags:
     - recommended
     - java
@@ -44,6 +44,7 @@ spec:
 #          default: org.redhat.janus
           type: string
           description: Name for the java package. eg (com.redhat.blah)
+          default: org.redhat.villain
         api_endpoint:
           title: API Endpoint
           default: /hello
@@ -117,8 +118,6 @@ spec:
               type: string
               description: Your SCM host
               default: gitlab-gitlab.apps.cluster-4tqns.sandbox1361.opentlc.com
-              enum:
-                - gitlab-gitlab.apps.cluster-4tqns.sandbox1361.opentlc.com
             owner:
               title: Repo Owner
               type: string
