@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: quarkus-reactive-postgresql-template
-  title: quarkus-reactive-postgresql-template
-  description: Create a quarkus-reactive-postgresql microservice
+  name: quarkus-reactive-postgresql-template-1
+  title: quarkus-reactive-postgresql-template-1
+  description: Create a quarkus-reactive-postgresql microservice 1
   tags:
     - recommended
     - java
