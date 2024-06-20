@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: quarkus-reactive-template
-  title: quarkus-reactive-template
-  description: Create a quarkus-reactive-template microservice
+  name: quarkus-reactive-template-hero
+  title: quarkus-reactive-template-hero
+  description: Create a quarkus-reactive-template microservice hero
   tags:
     - recommended
     - java
