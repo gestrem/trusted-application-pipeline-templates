@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: quarkus-reactive-template-hero-1
-  title: quarkus-reactive-template-hero-1
-  description: 01 Create a quarkus-reactive-template microservice hero
+  name: quarkus-reactive-template-hero-2
+  title: quarkus-reactive-template-hero-2
+  description: 03 Create a quarkus-reactive-template microservice hero
   tags:
     - recommended
     - java
@@ -22,7 +22,7 @@ spec:
         cluster_info:
           title: Name
           type: string
-          description: Use the wildcard displayed in your browser 
+          description: Use the wildcard displayed in your browser 12
           default: .apps.cluster-4tqns.sandbox1361.opentlc.com
         component_id:
           title: Name
