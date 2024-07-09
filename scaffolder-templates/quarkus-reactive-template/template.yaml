@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: quarkus-reactive-template-hero-3
-  title: quarkus-reactive-template-hero-3
-  description: 04 Create a quarkus-reactive-template microservice hero
+  name: quarkus-reactive-template-hero-4
+  title: quarkus-reactive-template-hero-4
+  description: 05 Create a quarkus-reactive-template microservice hero
   tags:
     - recommended
     - java
@@ -174,8 +174,8 @@ spec:
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
-          destination: ${{ parameters.repo.host }}https://${{ parameters.cluster_info }}/${{ parameters.repo.owner }}/${{parameters.component_id}}-gitops.git
-          source_repository: ${{ parameters.repo.host }}https://${{ parameters.cluster_info }}/${{ parameters.repo.owner }}/${{parameters.component_id}}.git
+          destination: https://${{ parameters.repo.host }}${{ parameters.cluster_info }}/${{ parameters.repo.owner }}/${{parameters.component_id}}-gitops.git
+          source_repository: https://${{ parameters.repo.host }}${{ parameters.cluster_info }}/${{ parameters.repo.owner }}/${{parameters.component_id}}.git
           repository_name: ${{parameters.component_id}}
           git_owner: ${{ parameters.repo.owner }}
           cluster: ${{ parameters.cluster_info }}
