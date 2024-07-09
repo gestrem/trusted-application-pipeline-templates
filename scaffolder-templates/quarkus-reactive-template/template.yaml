@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: quarkus-reactive-template-hero
   title: quarkus-reactive-template-hero
-  description: Create a quarkus-reactive-template microservice hero
+  description: New Create a quarkus-reactive-template microservice hero
   tags:
     - recommended
     - java
@@ -17,7 +17,13 @@ spec:
       required:
         - component_id
         - java_package_name
+        - cluster_info
       properties:
+        cluster_info:
+          title: Name
+          type: string
+          description: Use the wildcard displayed in your browser 
+          default: .apps.cluster-4tqns.sandbox1361.opentlc.com
         component_id:
           title: Name
           type: string
@@ -103,9 +109,9 @@ spec:
               title: Repo Host
               type: string
               description: Your SCM host
-              default: gitlab-gitlab.apps.cluster-4tqns.sandbox1361.opentlc.com
+              default: gitlab-gitlab
               enum:
-                - gitlab-gitlab.apps.cluster-4tqns.sandbox1361.opentlc.com
+                - gitlab-gitlab
             owner:
               title: Repo Owner
               type: string
@@ -138,7 +144,7 @@ spec:
           artifact_id: ${{ parameters.artifact_id }}
           java_package_name: ${{ parameters.java_package_name }}
           owner: ${{ user.entity.metadata.name }}
-          cluster: .apps.cluster-4tqns.sandbox1361.opentlc.com
+          cluster: ${{ parameters.cluster_info }}
           host: ${{ parameters.repo.host }}
           destination: ${{ parameters.repo.owner }}/${{ parameters.component_id }}
           quay_destination: ${{ parameters.image_organization}}/${{ parameters.component_id }}
@@ -172,7 +178,7 @@ spec:
           source_repository: https://${{ parameters.repo.host }}/${{ parameters.repo.owner }}/${{parameters.component_id}}.git
           repository_name: ${{parameters.component_id}}
           git_owner: ${{ parameters.repo.owner }}
-          cluster: .apps.cluster-4tqns.sandbox1361.opentlc.com
+          cluster: ${{ parameters.cluster_info }}
           namespace: ${{ parameters.component_id }}-dev
           image_registry: ${{ parameters.image_registry }}
           image_host: ${{ parameters.image_host }}
@@ -180,7 +186,7 @@ spec:
           image_name: ${{ parameters.component_id }}
           image_tag: ${{ parameters.image_tag }}
           port: 8080
-          repository_host: ${{ parameters.repo.host }}
+          repository_host: ${{ parameters.cluster_info }}${{ parameters.repo.host }}
           deployment_name: quarkus-template
           user: ${{ user.entity.metadata.name }}
           verify_commits: ${{ parameters.repo.verify_commits }}
