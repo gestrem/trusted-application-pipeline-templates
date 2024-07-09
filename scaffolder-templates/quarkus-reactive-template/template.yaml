@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: quarkus-reactive-template-hero-2
-  title: quarkus-reactive-template-hero-2
-  description: 03 Create a quarkus-reactive-template microservice hero
+  name: quarkus-reactive-template-hero-3
+  title: quarkus-reactive-template-hero-3
+  description: 04 Create a quarkus-reactive-template microservice hero
   tags:
     - recommended
     - java
@@ -209,7 +209,7 @@ spec:
         appName: ${{ parameters.component_id }}-bootstrap
         argoInstance: main
         namespace: janus-argocd
-        repoUrl: ${{ parameters.repo.host }}https://${{ parameters.cluster_info }}/${{ parameters.repo.owner }}/${{ parameters.component_id }}-gitops.git
+        repoUrl: https://${{ parameters.repo.host }}${{ parameters.cluster_info }}/${{ parameters.repo.owner }}/${{ parameters.component_id }}-gitops.git
         path: 'argocd/'
 
   output:
