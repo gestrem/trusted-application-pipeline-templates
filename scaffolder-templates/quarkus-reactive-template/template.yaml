@@ -28,16 +28,16 @@ spec:
         group_id:
           title: Group Id
           type: string
-          default: redhat.janus
+          default: io.quarkus.workshop.super-heroes
           description: Maven Group Id
         artifact_id:
           title: Artifact Id
           type: string
-          default: quarkus-app
+          default: rest-heroes
           description: Maven Artifact Id
         java_package_name:
           title: Java Package Name
-          default: org.redhat.janus
+          default: io.quarkus.workshop.superheroes.villain
           type: string
           description: Name for the java package. eg (com.redhat.blah)
         description:
