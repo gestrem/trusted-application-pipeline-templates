@@ -145,7 +145,7 @@ spec:
           java_package_name: ${{ parameters.java_package_name }}
           owner: ${{ user.entity.metadata.name }}
           cluster: ${{ parameters.cluster_info }}
-          host: ${{ parameters.cluster_info }}${{ parameters.repo.host }}
+          host: ${{ parameters.repo.host }}${{ parameters.cluster_info }}
           destination: ${{ parameters.repo.owner }}/${{ parameters.component_id }}
           quay_destination: ${{ parameters.image_organization}}/${{ parameters.component_id }}
           port: 8080
@@ -155,7 +155,7 @@ spec:
       name: Publish
       action: publish:gitlab
       input:
-        repoUrl: "${{ parameters.cluster_info }}${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}"
+        repoUrl: "${{ parameters.repo.host }}${{ parameters.cluster_info }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}"
         repoVisibility: public
 
     - id: register
@@ -174,8 +174,8 @@ spec:
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
-          destination: https://${{ parameters.cluster_info }}${{ parameters.repo.host }}/${{ parameters.repo.owner }}/${{parameters.component_id}}-gitops.git
-          source_repository: https://${{ parameters.cluster_info }}${{ parameters.repo.host }}/${{ parameters.repo.owner }}/${{parameters.component_id}}.git
+          destination: ${{ parameters.repo.host }}https://${{ parameters.cluster_info }}/${{ parameters.repo.owner }}/${{parameters.component_id}}-gitops.git
+          source_repository: ${{ parameters.repo.host }}https://${{ parameters.cluster_info }}/${{ parameters.repo.owner }}/${{parameters.component_id}}.git
           repository_name: ${{parameters.component_id}}
           git_owner: ${{ parameters.repo.owner }}
           cluster: ${{ parameters.cluster_info }}
@@ -186,7 +186,7 @@ spec:
           image_name: ${{ parameters.component_id }}
           image_tag: ${{ parameters.image_tag }}
           port: 8080
-          repository_host: ${{ parameters.cluster_info }}${{ parameters.repo.host }}
+          repository_host: ${{ parameters.repo.host }}${{ parameters.cluster_info }}
           deployment_name: quarkus-template
           user: ${{ user.entity.metadata.name }}
           verify_commits: ${{ parameters.repo.verify_commits }}
@@ -196,7 +196,7 @@ spec:
       name: Publishing to Resource Repository
       action: publish:gitlab
       input:
-        repoUrl: "${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}-gitops"
+        repoUrl: "${{ parameters.repo.host }}${{ parameters.cluster_info }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}-gitops"
         title: gitops resources for ${{ parameters.component_id }}
         description: gitops resources for ${{ parameters.component_id }}
         sourcePath: ./tenant-gitops
@@ -209,7 +209,7 @@ spec:
         appName: ${{ parameters.component_id }}-bootstrap
         argoInstance: main
         namespace: janus-argocd
-        repoUrl: https://${{ parameters.cluster_info }}${{ parameters.repo.host }}/${{ parameters.repo.owner }}/${{ parameters.component_id }}-gitops.git
+        repoUrl: ${{ parameters.repo.host }}https://${{ parameters.cluster_info }}/${{ parameters.repo.owner }}/${{ parameters.component_id }}-gitops.git
         path: 'argocd/'
 
   output:
